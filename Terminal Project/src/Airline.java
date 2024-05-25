@@ -1,4 +1,5 @@
-public class Airline extends Object{
+package src;
+public class Airline{
     private String name;
     private String code;
     

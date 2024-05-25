@@ -1,11 +1,15 @@
+package src;
 public class Time extends Date {
     private int minutes;
     private int hours;
 
     Time(){
-
+        super();
+        minutes=0;
+        hours=0;
     }
-    Time(int minutes,int hours){
+    Time(int day,int month,int year,int minutes,int hours){
+        super(day, month, year);
         this.minutes=minutes;
         this.hours=hours;
     }
@@ -24,9 +28,10 @@ public class Time extends Date {
     }
 
     public String toString(){
-
+        return "Hours : "+hours+"\nMinutes : "+minutes+"\n"+super.toString()+"\n";
     }
     public void display(){
-
+        System.out.println("Hours : "+hours+"\nMinutes : "+minutes);
+        super.display();
     }
 }

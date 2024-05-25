@@ -1,8 +1,3 @@
-person
-passenger extends person
-staff extends person
-
-
 
 ### 1. **Class Structure**
 - **Airport**: Central class managing the overall system.
@@ -19,7 +14,6 @@ staff extends person
 #### **Airport**
 - **Attributes**: 
   - List of flights
-  <!-- - List of airlines -->
   - List of staff
   - List of gates
 - **Methods**: 
@@ -101,13 +95,13 @@ staff extends person
   - Check-in baggage
   - Track baggage status
 
-#### **Schedule**
+<!-- #### **Schedule**
 - **Attributes**: 
   - List of flights
   - Timetable
 - **Methods**: 
   - Update schedule
-  - Display schedule
+  - Display schedule -->
 
 ### 3. **Interactions and Relationships**
 - **Composition**: Airport has flights, airlines, staff, and gates.
@@ -129,4 +123,3 @@ staff extends person
 - **Performance**: Efficient handling of data and operations.
 - **Security**: Ensuring data privacy and security for passengers and staff.
 
-Implementing such a system involves creating a robust object-oriented design, utilizing concepts like encapsulation, inheritance, polymorphism, and composition to ensure a well-structured and maintainable codebase.

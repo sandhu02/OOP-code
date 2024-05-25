@@ -1,3 +1,4 @@
+package src;
 public class Date {
     private int day;
     private int month;
@@ -33,9 +34,9 @@ public class Date {
         this.year = year;
     }
     public String toString(){
-
+        return "Month : "+month+"\nDay : "+day+"\nYear : "+year+"\n";
     }
     public void display(){
-        
+        System.out.println("Month : "+month+"\nDay : "+day+"\nYear : "+year);
     }
 }
