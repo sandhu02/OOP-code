@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 
 public class PassengerPage extends JFrame{
     JButton bookticketButton;
+    JButton canceltickeButton;
     JButton seeScheduleButton;
     JButton goHomeButton;
 
@@ -17,26 +18,32 @@ public class PassengerPage extends JFrame{
         setSize(1000,600);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new GridLayout(3,3));
+        setLayout(new GridLayout());
 
         bookticketButton = new JButton("Book Ticket");
+        canceltickeButton = new JButton("Cancel Ticket");
         seeScheduleButton = new JButton("See Flight Schedule");
         goHomeButton = new JButton("Go back to Home");
 
         MyActionListener listener = new MyActionListener();
 
         bookticketButton.addActionListener(listener);
+        canceltickeButton.addActionListener(listener);
         seeScheduleButton.addActionListener(listener);
         goHomeButton.addActionListener(listener);
 
         add(bookticketButton);
+        add(canceltickeButton);
         add(seeScheduleButton);
         add(goHomeButton);
     }
 
     public class MyActionListener implements ActionListener{
         public void actionPerformed(ActionEvent ae){
-            if (ae.getActionCommand().equals("'Book Ticket'")){
+            if (ae.getActionCommand().equals("Book Ticket")){
+
+            }
+            if (ae.getActionCommand().equals("Cancel Ticket")){
 
             }
             else if (ae.getActionCommand().equals("See Flight Schedule")){

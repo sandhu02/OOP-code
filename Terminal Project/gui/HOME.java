@@ -45,7 +45,8 @@ public class HOME extends JFrame{
                 PassengerPage pp1 = new PassengerPage();
             }
             else if (ae.getActionCommand().equals("Staff")){
-
+                dispose();
+                StaffPage sp = new StaffPage();
             }
             else if (ae.getActionCommand().equals("Exit")){
                 System.exit(0);

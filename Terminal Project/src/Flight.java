@@ -1,8 +1,16 @@
 package src ;
 
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Flight {
+public class Flight implements Serializable{
     private String flightNumber;
     private Airline airline;
     private Time departureTime;
@@ -73,7 +81,7 @@ public class Flight {
     }
 
     public String toString(){
-        return "Flight Number : "+flightNumber+"\nAirline : "+airline.toString()+"\nDeparture Time : "+departureTime.toString()+"\nArrival Time : "+arrivalTime.toString()+"\nPassengers : "+passengers.toString()+"\nGate : "+gate.toString()+"\n";
+        return "Flight Number : "+flightNumber+", Airline : "+airline.toString()+", Departure Time : "+departureTime.toString()+", Arrival Time : "+arrivalTime.toString()+", Passengers : "+passengers.toString()+", Gate : "+gate.toString()+", Destination : "+destination+" , ";
     }
     public void display(){
         System.out.println("Flight Number : "+flightNumber);
@@ -82,6 +90,7 @@ public class Flight {
         System.out.println("Arrival Time : "+arrivalTime.toString());
         System.out.println("Number of Passenger : "+passengers.size() );
         System.out.println("Gate : "+gate.toString());
+        System.out.println("Destination : "+destination);
     }
 
     public void addPassenger(Passenger passenger){
@@ -95,5 +104,66 @@ public class Flight {
         }
     }
 
+    public static void writeToFile(Flight flight){
+        try{
+            File f = new File("C:\\D-drive-53140\\Semester 3\\OOP\\Terminal Project\\data\\flightData.ser");
+            ObjectOutputStream oos;
 
+            if (f.exists()){
+                oos = new MyObjectoutputStream(new FileOutputStream(f,true));
+            }
+            else {
+                oos = new ObjectOutputStream(new FileOutputStream(f));
+            }
+             
+            oos.writeObject(flight);
+            oos.close();
+        }
+        catch(IOException e){
+            System.out.println("Error while writing");
+        }
+    }
+    
+    public static ArrayList<Flight> readFromFile(){
+        ArrayList <Flight> arr = new ArrayList<Flight>();
+        ObjectInputStream ois;
+
+        try {
+            FileInputStream fis = new FileInputStream("C:\\D-drive-53140\\Semester 3\\OOP\\Terminal Project\\data\\flightData.ser");
+            ois = new ObjectInputStream(fis);
+            while (true){
+                Flight p = (Flight)ois.readObject(); 
+                arr.add(p);
+            }
+        }
+        catch (ClassNotFoundException e1){
+            System.out.println("Class not found ");
+        }
+        catch (EOFException e2){
+            return arr;
+        }
+        catch (IOException e3){
+            System.out.println("File not found in reader ");
+        }
+        return arr;
+    }
+    public static void deletePassenger(String flightNumber){
+        ArrayList <Flight> arr = readFromFile(); 
+        for (int i=0;i<arr.size();i++){
+            if (arr.get(i).getFlightNumber().equals(flightNumber)){
+                arr.remove(i);
+                break;
+            }
+        }
+        File f = new File("C:\\D-drive-53140\\Semester 3\\OOP\\Terminal Project\\data\\flightData.ser");
+        try{
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f));
+            for (int i=0;i<arr.size();i++){
+                oos.writeObject(arr.get(i));
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 }

@@ -1,9 +1,11 @@
 package src;
 
-public class Person {
-    String name;
-    String contactNumber;
-    String email;
+import java.io.Serializable;
+
+public class Person implements Serializable{
+    private String name;
+    private String contactNumber;
+    private String email;
     
     public Person() {
         name="";
@@ -35,7 +37,7 @@ public class Person {
     }
     @Override
     public String toString() {
-        return "name=" + name + ", contactNumber=" + contactNumber + ", email=" + email + "\n";
+        return "name=" + name + ", contactNumber=" + contactNumber + ", email=" + email+", ";
     } 
     
     

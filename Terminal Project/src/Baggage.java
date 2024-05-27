@@ -1,6 +1,8 @@
 package src;
 
-public class Baggage {
+import java.io.Serializable;
+
+public class Baggage implements Serializable{
     private String baggageId;
     private Passenger passenger;
     private Flight flight;
@@ -44,7 +46,7 @@ public class Baggage {
     }
     @Override
     public String toString() {
-        return "Baggage [baggageId=" + baggageId + ", passenger=" + passenger + ", flight=" + flight + ", status="
-                + status + "]";
+        return "baggageId=" + baggageId + ", passenger=" + passenger + ", flight=" + flight + ", status="
+                + status + ", ";
     } 
 }
