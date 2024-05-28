@@ -18,7 +18,7 @@ public class PassengerPage extends JFrame{
         setSize(1000,600);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new GridLayout());
+        setLayout(new GridLayout(4,1));
 
         bookticketButton = new JButton("Book Ticket");
         canceltickeButton = new JButton("Cancel Ticket");
@@ -41,10 +41,12 @@ public class PassengerPage extends JFrame{
     public class MyActionListener implements ActionListener{
         public void actionPerformed(ActionEvent ae){
             if (ae.getActionCommand().equals("Book Ticket")){
-
+                dispose();
+                BookTicketPage bookticket = new BookTicketPage();
             }
             if (ae.getActionCommand().equals("Cancel Ticket")){
-
+                dispose();
+                CancelTicket cancel = new CancelTicket();
             }
             else if (ae.getActionCommand().equals("See Flight Schedule")){
 

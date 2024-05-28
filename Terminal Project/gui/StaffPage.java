@@ -2,21 +2,26 @@ package gui;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import src.Passenger;
+
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class StaffPage extends JFrame{
     JButton seeScheduleButton;
     JButton seePassengerButton;
     JButton backButton;
 
-    StaffPage(){
+    public StaffPage(){
+        setTitle("Staff Page");
         setSize(1000,600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
-        setLayout(new GridLayout());
-
+        setLayout(new GridLayout(3,1));
+        
         seeScheduleButton = new JButton("See Flight Schedule");
         seePassengerButton  = new JButton("View Passengers");
         backButton = new JButton("Go Back");
@@ -30,6 +35,8 @@ public class StaffPage extends JFrame{
         add(seeScheduleButton);
         add(seePassengerButton);
         add(backButton);
+
+        setVisible(true);
     }
 
     public class MyActionListener implements ActionListener{
@@ -38,7 +45,8 @@ public class StaffPage extends JFrame{
                 
             }
             else if (ae.getActionCommand().equals("View Passengers")){
-
+                ArrayList <Passenger> arr = Passenger.readFromFile();
+                JOptionPane.showMessageDialog(null, "hello");
             }
             else if (ae.getActionCommand().equals("Go Back")){
                 dispose();

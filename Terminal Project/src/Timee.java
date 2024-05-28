@@ -1,14 +1,17 @@
 package src;
-public class Time extends Date {
+
+import java.io.Serializable;
+
+public class Timee extends Date implements Serializable {
     private int minutes;
     private int hours;
 
-    Time(){
+    public Timee(){
         super();
         minutes=0;
         hours=0;
     }
-    Time(int day,int month,int year,int minutes,int hours){
+    public Timee(int day,int month,int year,int minutes,int hours){
         super(day, month, year);
         this.minutes=minutes;
         this.hours=hours;

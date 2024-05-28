@@ -1,5 +1,8 @@
 package src;
-public class Gate {
+
+import java.io.Serializable;
+
+public class Gate implements Serializable{
     private String gateNumber;
 
     public Gate(){

@@ -13,8 +13,8 @@ import java.util.ArrayList;
 public class Flight implements Serializable{
     private String flightNumber;
     private Airline airline;
-    private Time departureTime;
-    private Time arrivalTime;
+    private Timee departureTime;
+    private Timee arrivalTime;
     private ArrayList <Passenger> passengers;
     private Gate gate;
     private String destination;
@@ -28,7 +28,7 @@ public class Flight implements Serializable{
         gate = null;
         destination = "";
     }
-    public Flight(String flightNumber, Airline airline, Time departureTime, Time arrivalTime,ArrayList<Passenger> passengers,Gate gate,String destination) {
+    public Flight(String flightNumber, Airline airline, Timee departureTime, Timee arrivalTime,ArrayList<Passenger> passengers,Gate gate,String destination) {
         this.flightNumber = flightNumber;
         this.airline = airline;
         this.departureTime = departureTime;
@@ -49,16 +49,16 @@ public class Flight implements Serializable{
     public void setAirline(Airline airline) {
         this.airline = airline;
     }
-    public Time getDepartureTime() {
+    public Timee getDepartureTime() {
         return departureTime;
     }
-    public void setDepartureTime(Time departureTime) {
+    public void setDepartureTime(Timee departureTime) {
         this.departureTime = departureTime;
     }
-    public Time getArrivalTime() {
+    public Timee getArrivalTime() {
         return arrivalTime;
     }
-    public void setArrivalTime(Time arrivalTime) {
+    public void setArrivalTime(Timee arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
     public ArrayList<Passenger> getPassengers() {
@@ -81,13 +81,13 @@ public class Flight implements Serializable{
     }
 
     public String toString(){
-        return "Flight Number : "+flightNumber+", Airline : "+airline.toString()+", Departure Time : "+departureTime.toString()+", Arrival Time : "+arrivalTime.toString()+", Passengers : "+passengers.toString()+", Gate : "+gate.toString()+", Destination : "+destination+" , ";
+        return "Flight Number : "+flightNumber+", Airline : "+airline.toString()+", Departure Timee : "+departureTime.toString()+", Arrival Timee : "+arrivalTime.toString()+", Passengers : "+passengers.toString()+", Gate : "+gate.toString()+", Destination : "+destination+" , ";
     }
     public void display(){
         System.out.println("Flight Number : "+flightNumber);
         System.out.println("Airline : "+airline.getName());
-        System.out.println("Departure Time : "+departureTime.toString());
-        System.out.println("Arrival Time : "+arrivalTime.toString());
+        System.out.println("Departure Timee : "+departureTime.toString());
+        System.out.println("Arrival Timee : "+arrivalTime.toString());
         System.out.println("Number of Passenger : "+passengers.size() );
         System.out.println("Gate : "+gate.toString());
         System.out.println("Destination : "+destination);

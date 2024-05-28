@@ -11,23 +11,23 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Ticket implements Serializable{
-    private String ticketNumber;
+    private int ticketNumber;
     private int seatNumber;
     private double price;
     public Ticket() {
-        ticketNumber="";
+        ticketNumber=0;
         seatNumber=0;
         price=0;
     }
-    public Ticket(String ticketNumber, int seatNumber, double price) {
+    public Ticket(int ticketNumber, int seatNumber, double price) {
         this.ticketNumber = ticketNumber;
         this.seatNumber = seatNumber;
         this.price = price;
     }
-    public String getTicketNumber() {
+    public int getTicketNumber() {
         return ticketNumber;
     }
-    public void setTicketNumber(String ticketNumber) {
+    public void setTicketNumber(int ticketNumber) {
         this.ticketNumber = ticketNumber;
     }
     public int getSeatNumber() {
@@ -91,10 +91,10 @@ public class Ticket implements Serializable{
         }
         return arr;
     }
-    public static void deletePassenger(String ticketNumber){
+    public static void deletePassenger(int ticketNumber){
         ArrayList <Ticket> arr = readFromFile(); 
         for (int i=0;i<arr.size();i++){
-            if (arr.get(i).getTicketNumber().equals(ticketNumber)){
+            if (arr.get(i).getTicketNumber()==ticketNumber){
                 arr.remove(i);
                 break;
             }

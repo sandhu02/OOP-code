@@ -1,13 +1,16 @@
 package src;
-public class Airline{
+
+import java.io.Serializable;
+
+public class Airline implements Serializable{
     private String name;
     private String code;
     
-    Airline(){
+    public Airline(){
         name="";
         code="";
     }
-    Airline(String name,String code){
+    public Airline(String name,String code){
         this.name=name;
         this.code=code;
     }
