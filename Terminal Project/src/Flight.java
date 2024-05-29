@@ -166,4 +166,13 @@ public class Flight implements Serializable{
             System.out.println(e.getMessage());
         }
     }
+    public static Flight searchFlight(String flightNumber){
+        ArrayList <Flight> arr = readFromFile(); 
+        for (int i=0;i<arr.size();i++){
+            if (arr.get(i).getFlightNumber().equals(flightNumber)){
+                return arr.get(i);
+            }
+        }
+        return null;
+    }
 }

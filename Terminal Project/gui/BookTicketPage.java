@@ -98,5 +98,4 @@ public class BookTicketPage extends JFrame{
             }
         }
     }
-
 }

@@ -1,5 +1,18 @@
+import java.util.ArrayList;
 
-public class Airport_Management_System {
-    // Airline a= new Airline("spirit","001");
-    
+import gui.*;
+
+import src.Airline;
+import src.Flight;
+import src.Gate;
+import src.Passenger;
+import src.Staff;
+import src.Ticket;
+import src.Timee;
+
+public class Airport_Management_System{
+    public static void main(String[] args) {
+        HOME h = new HOME();
+        
+    }
 }

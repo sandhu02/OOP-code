@@ -95,13 +95,6 @@
   - Check-in baggage
   - Track baggage status
 
-<!-- #### **Schedule**
-- **Attributes**: 
-  - List of flights
-  - Timetable
-- **Methods**: 
-  - Update schedule
-  - Display schedule -->
 
 ### 3. **Interactions and Relationships**
 - **Composition**: Airport has flights, airlines, staff, and gates.

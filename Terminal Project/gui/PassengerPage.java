@@ -11,6 +11,8 @@ public class PassengerPage extends JFrame{
     JButton bookticketButton;
     JButton canceltickeButton;
     JButton seeScheduleButton;
+    JButton searchbaggageButton;
+    JButton viewTicketButton;
     JButton goHomeButton;
 
     public PassengerPage(){
@@ -18,11 +20,13 @@ public class PassengerPage extends JFrame{
         setSize(1000,600);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new GridLayout(4,1));
+        setLayout(new GridLayout(3,2));
 
         bookticketButton = new JButton("Book Ticket");
         canceltickeButton = new JButton("Cancel Ticket");
         seeScheduleButton = new JButton("See Flight Schedule");
+        viewTicketButton = new JButton("View Ticket Details");
+        searchbaggageButton = new JButton("CheckIn Baggage");
         goHomeButton = new JButton("Go back to Home");
 
         MyActionListener listener = new MyActionListener();
@@ -30,11 +34,15 @@ public class PassengerPage extends JFrame{
         bookticketButton.addActionListener(listener);
         canceltickeButton.addActionListener(listener);
         seeScheduleButton.addActionListener(listener);
+        viewTicketButton.addActionListener(listener);
+        searchbaggageButton.addActionListener(listener);
         goHomeButton.addActionListener(listener);
 
         add(bookticketButton);
         add(canceltickeButton);
         add(seeScheduleButton);
+        add(viewTicketButton);
+        add(searchbaggageButton);
         add(goHomeButton);
     }
 
@@ -49,7 +57,15 @@ public class PassengerPage extends JFrame{
                 CancelTicket cancel = new CancelTicket();
             }
             else if (ae.getActionCommand().equals("See Flight Schedule")){
+                
+                FlightSchedulePage flightPage = new FlightSchedulePage();
+            }
+            else if (ae.getActionCommand().equals("View Ticket Details")){
 
+            }
+            else if (ae.getActionCommand().equals("CheckIn Baggage")){
+                dispose();
+                EnterbaggagePage bPage = new EnterbaggagePage();
             }
             else if (ae.getActionCommand().equals("Go back to Home")){
                 dispose();

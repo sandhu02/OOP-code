@@ -103,5 +103,13 @@ public class Passenger extends Person implements Serializable{
             System.out.println(e.getMessage());
         }
     }
-
+    public static Passenger searchPassenger(String passportNumber){
+        ArrayList <Passenger> arr = readFromFile(); 
+        for (int i=0;i<arr.size();i++){
+            if (arr.get(i).getPassportNumber().equals(passportNumber)){
+                return arr.get(i);
+            }
+        }
+        return null;
+    }
 }
